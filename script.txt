@@ -1,0 +1,20 @@
+The aim of the code in this notebook is to build a predictictive model from the data in the dataset. The dataset of choice is supermarket_sales datasset which i found on kaggle it has 17 columns and 1000 rows.
+
+I started by creating a virtual environment then i installed the required dependencies in the virtual environment. These dependencies are essential for machine learning and data visualization and processing.
+
+I loaded the csv dataset with pandas. From the information in the dataset is deduced that the dependent variable is Rating (column) and also that the dataset is a regression problem (this is because the output or dependent variable is a float quantity it is numerical data)
+
+I then proceeded to cleaning the data first before i visualized it in this process i found out that Tax_5% column had a null value so i found the mean of all the values in the column and replaced the null value with the result 
+
+I then proceeded to visulizing the data in the columns with numerical values i use seaborn and matplotlib in doing so. Then i visualized the data in the columns with categorical values.
+
+It is a known fact that machine learning algorithms are trained with numbers not letters because string cannot be used in calculations so for the catergorical values in the columns i converted them to a numerical value to match. This was mad easy using Label Encoder module this module is from sckit learn package which i installed and imported
+
+I then proceeded to seperating my dataset into Features and Target the Features where every column in the dataset excluding Rating (because rating is the target) and Invoice_ID , Date, Time (Because they did'nt have any significant effect on the target). 
+The Target is only the Rating column
+
+I then split the data into 80% for training and 20% for testing
+
+I used the training split to train the XGBREgressor model first and then the test data in generating its perfomance metrics. I also did the same thing for building the SVR (Support Vector Regression) model and generating its performance metrics.
+
+Finally i saved the models using joblib it saved in a .joblib format
